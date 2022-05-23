@@ -1,0 +1,82 @@
+$darken-percentage: 5;
+$number-color: #f5f5f5;
+$operator-color: #efefef;
+$function-color: #e0e0e0;
+$grid-columns: 4;
+$grid-rows: 5;
+$grid-column-width: 80px;
+$grid-row-height:80px;
+
+@mixin darkenHoverBackground($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, $darken-percentage);
+  }
+}
+
+@mixin gridPosition($column, $row) {
+  grid-column-start: $column;
+  grid-row-start: $row;
+}
+
+.calculatorAppFrame {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+
+  & button {
+    cursor: pointer;
+    font-size: medium;
+  }
+}
+
+.calculatorApp {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, minmax(0, $grid-column-width));
+  grid-template-rows: repeat($grid-rows, minmax(0, $grid-row-height));
+  place-content: center;
+  width: calc($grid-column-width * $grid-columns);
+  box-shadow: 0 0 8px $function-color;
+}
+
+.calculatorDisplay {
+  grid-column-start: span $grid-columns;
+  padding: 21px;
+  font-size: 2em;
+  outline: none;
+  text-overflow: ellipsis;
+}
+
+.calculatorButtonNumber {
+  @include darkenHoverBackground($number-color);
+}
+
+.calculatorButtonOperator {
+  @include darkenHoverBackground($operator-color);
+
+  &[name="+"] {
+    @include gridPosition(4, 2);
+  }
+
+  &[name="-"] {
+    @include gridPosition(4, 3);
+  }
+
+  &[name="*"] {
+    @include gridPosition(4, 4);
+  }
+
+  &[name="/"] {
+    @include gridPosition(4, 5);
+  }
+}
+
+.calculatorButtonFunction {
+  @include darkenHoverBackground($function-color);
+  font-weight: bold;
+
+  &[name="CE"] {
+    @include gridPosition(1, 5);
+  }
+}
