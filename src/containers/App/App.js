@@ -1,11 +1,11 @@
-import Calculator from '../../components/Calculator/Calculator';
+import Calculator from '../../components/Calculator/Calculator'
 
 function App() {
   return (
     <div role="main">
       <Calculator />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

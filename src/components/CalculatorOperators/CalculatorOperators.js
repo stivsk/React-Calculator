@@ -3,7 +3,7 @@ const calculatorOperators = [
   { symbol: '-', operation: a => b => a - b },
   { symbol: '*', operation: a => b => a * b },
   { symbol: '/', operation: a => b => a / b },
-];
+]
 
 function CalculatorOperators({ onClick }) {
   return calculatorOperators.map(operator => (
@@ -15,7 +15,7 @@ function CalculatorOperators({ onClick }) {
     >
       {operator.symbol}
     </button>
-  ));
+  ))
 }
 
-export default CalculatorOperators;
+export default CalculatorOperators

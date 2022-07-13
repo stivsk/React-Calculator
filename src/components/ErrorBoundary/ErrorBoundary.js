@@ -1,22 +1,22 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       hasError: false,
-    };
+    }
   }
 
-  static getDerivedStateFromError = () => ({ hasError: true });
+  static getDerivedStateFromError = () => ({ hasError: true })
 
   render() {
-    const { hasError } = this.state;
-    const { fallback, children } = this.props;
+    const { hasError } = this.state
+    const { fallback, children } = this.props
 
-    return hasError ? fallback : children;
+    return hasError ? fallback : children
   }
 }
 
@@ -26,4 +26,4 @@ ErrorBoundary.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
-};
+}

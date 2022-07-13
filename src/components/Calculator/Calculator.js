@@ -1,19 +1,19 @@
-import { Suspense, lazy } from 'react';
-import useCalculator from '../../hooks/useCalculator';
-import CalculatorLoader from '../CalculatorLoader/CalculatorLoader';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import { Suspense, lazy } from 'react'
+import useCalculator from '../../hooks/useCalculator'
+import CalculatorLoader from '../CalculatorLoader/CalculatorLoader'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
-import styles from './calculator.module.scss';
+import styles from './calculator.module.scss'
 
 const CalculatorFunctions = lazy(() =>
   import('../CalculatorFunctions/CalculatorFunctions')
-);
+)
 const CalculatorNumbers = lazy(() =>
   import('../CalculatorNumbers/CalculatorNumbers')
-);
+)
 const CalculatorOperators = lazy(() =>
   import('../CalculatorOperators/CalculatorOperators')
-);
+)
 
 function Calculator() {
   const {
@@ -22,7 +22,7 @@ function Calculator() {
     handleNumbers,
     handleOperators,
     handleFunctions,
-  } = useCalculator();
+  } = useCalculator()
 
   return (
     <div className={styles.wrapper}>
@@ -44,7 +44,7 @@ function Calculator() {
         </ErrorBoundary>
       </div>
     </div>
-  );
+  )
 }
 
-export default Calculator;
+export default Calculator

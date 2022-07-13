@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest/globals": true
     },
     "extends": [
         "eslint:recommended",
@@ -17,20 +18,24 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "prettier/prettier": ["error", {
         "singleQuote": true,
-        "arrowParens": "avoid"
+        "arrowParens": "avoid",
+        "semi": false
       }],
       "arrow-body-style": "off",
-      "prefer-arrow-callback": "off"
-    },
-    "ignorePatterns": [
-      "*.test.js",
-      "*.spec.js"
-    ]
+      "prefer-arrow-callback": "off",
+      "max-len": ["error", {"code": 80, "ignoreUrls": true}],
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error"
+    }
 }

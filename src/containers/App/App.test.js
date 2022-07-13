@@ -1,10 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
+import App from './App'
 
-test('renders app', () => {
-  render(<App />);
+test('renders app', async () => {
+  await act(() => {
+    render(<App />)
+  })
 
-  const main = screen.getByRole("main")
+  const main = screen.getByRole('main')
 
-  expect(main).toBeInTheDocument();
-});
+  expect(main).toBeInTheDocument()
+})
