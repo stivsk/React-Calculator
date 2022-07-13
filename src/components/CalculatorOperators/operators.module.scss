@@ -1,0 +1,21 @@
+@import '../../styles/mixins';
+
+.operatorButton {
+  background-color: #f5f5f5;
+
+  &[name="+"] {
+    @include grid-position(4, 2);
+  }
+
+  &[name="-"] {
+    @include grid-position(4, 3);
+  }
+
+  &[name="*"] {
+    @include grid-position(4, 4);
+  }
+
+  &[name="/"] {
+    @include grid-position(4, 5);
+  }
+}

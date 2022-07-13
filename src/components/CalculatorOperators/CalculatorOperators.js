@@ -1,3 +1,5 @@
+import styles from './operators.module.scss'
+
 const calculatorOperators = [
   { symbol: '+', operation: a => b => a + b },
   { symbol: '-', operation: a => b => a - b },
@@ -12,6 +14,7 @@ function CalculatorOperators({ onClick }) {
       type="button"
       name={operator.symbol}
       onClick={() => onClick(operator.operation)}
+      className={styles.operatorButton}
     >
       {operator.symbol}
     </button>
