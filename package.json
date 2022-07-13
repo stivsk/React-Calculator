@@ -1,14 +1,16 @@
 {
-  "name": "calculator-training",
+  "name": "eslint-prettier-config",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "prettier": "^2.6.2",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
+    "react-content-loader": "^6.2.0",
     "react-dom": "^18.1.0",
+    "react-loading-skeleton": "^3.1.0",
     "react-scripts": "5.0.1",
     "sass": "^1.52.1",
     "web-vitals": "^2.1.4"
@@ -41,10 +43,21 @@
     "eslint": "^8.16.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-stylelint": "^15.1.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0"
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.2.0"
   }
 }

@@ -1,0 +1,38 @@
+@use "sass:color";
+
+$calculator-columns: 4;
+$calculator-rows: 5;
+$button-size: 80px;
+$buttons-color: #efefef;
+$buttons-color-darken: color.adjust($buttons-color, $blackness: 13%);
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat($calculator-columns, minmax(0, $button-size));
+  grid-template-rows: repeat($calculator-rows, minmax(0, $button-size));
+  box-shadow: 0 0 10px $buttons-color-darken;
+
+  & button {
+    cursor: pointer;
+    transition: background-color .3s ease-out;
+
+    &:hover {
+      background-color: $buttons-color-darken;
+    }
+  }
+}
+
+.displayValue {
+  grid-column-start: span $calculator-columns;
+  padding: 20px;
+  font-size: 2rem;
+  outline: none;
+  border: 1px solid #efefef;
+  text-overflow: ellipsis;
+}
