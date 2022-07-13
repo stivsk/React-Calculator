@@ -5,13 +5,13 @@ let activeOperation = null
 const useCalculator = () => {
   const [displayValue, setDisplayValue] = useState('0')
 
-  const handleNumbers = e => {
+  const handleNumbers = ({ target }) => {
     if (displayValue === '0') {
-      setDisplayValue(e.target.name)
+      setDisplayValue(target.value)
       return
     }
 
-    setDisplayValue(pv => pv + e.target.name)
+    setDisplayValue(pv => pv + target.value)
   }
 
   const handleOperators = operation => {
@@ -19,22 +19,20 @@ const useCalculator = () => {
     setDisplayValue('0')
   }
 
-  const handleFunctions = e => {
+  const handleFunctions = ({ target }) => {
     const functions = {
       '=': () => {
-        if (activeOperation === null) return
-
-        const result = activeOperation(parseFloat(displayValue))
-        setDisplayValue(result.toString())
+        if (activeOperation !== null) {
+          setDisplayValue(activeOperation(parseFloat(displayValue)).toString())
+        }
       },
       CE: () => {
         setDisplayValue('0')
-
         activeOperation = null
       },
     }
 
-    return functions[e.target.name]()
+    return functions[target.name]()
   }
 
   const handleDisplayValue = e => {
@@ -42,12 +40,7 @@ const useCalculator = () => {
 
     if (Number.isNaN(Number(value))) return
 
-    if (displayValue === '0' && value !== '0.') {
-      setDisplayValue(parseFloat(value).toString())
-      return
-    }
-
-    setDisplayValue(value)
+    setDisplayValue(parseFloat(value || 0).toString())
   }
 
   return {

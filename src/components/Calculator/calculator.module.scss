@@ -35,4 +35,11 @@ $buttons-color-darken: color.adjust($buttons-color, $blackness: 13%);
   outline: none;
   border: 1px solid #efefef;
   text-overflow: ellipsis;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 }

@@ -28,7 +28,7 @@ function Calculator() {
     <div className={styles.wrapper}>
       <div className={styles.calculator}>
         <input
-          type="text"
+          type="number"
           name="result"
           aria-label="result"
           value={displayValue}
