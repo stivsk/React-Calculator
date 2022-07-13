@@ -1,10 +1,4 @@
-@use "sass:color";
-
-$calculator-columns: 4;
-$calculator-rows: 5;
-$button-size: 80px;
-$buttons-color: #efefef;
-$buttons-color-darken: color.adjust($buttons-color, $blackness: 13%);
+@import '../../styles/variables';
 
 .wrapper {
   display: grid;

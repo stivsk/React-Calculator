@@ -35,8 +35,8 @@ const useCalculator = () => {
     return functions[target.name]()
   }
 
-  const handleDisplayValue = e => {
-    const { value } = e.target
+  const handleDisplayValue = ({ target }) => {
+    const { value } = target
 
     if (Number.isNaN(Number(value))) return
 
