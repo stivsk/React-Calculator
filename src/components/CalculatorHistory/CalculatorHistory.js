@@ -25,7 +25,9 @@ function CalculatorHistory({ history }) {
       <h1>Results History</h1>
       <ul className={styles.resultsList}>
         {history.map(result => (
-          <li className={styles.resultsListItem}>{result}</li>
+          <li key={result} className={styles.resultsListItem}>
+            {result}
+          </li>
         ))}
       </ul>
     </div>
@@ -33,7 +35,8 @@ function CalculatorHistory({ history }) {
 }
 
 CalculatorHistory.propTypes = {
-  history: PropTypes.arrayOf({}).isRequired,
+  history: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object]))
+    .isRequired,
 }
 
 export default CalculatorHistory
