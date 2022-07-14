@@ -5,3 +5,5 @@ $calculator-rows: 5;
 $button-size: 80px;
 $buttons-color: #efefef;
 $buttons-color-darken: color.adjust($buttons-color, $blackness: 13%);
+
+$operations: '+', '-', '*', '/';

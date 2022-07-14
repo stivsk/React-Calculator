@@ -23,7 +23,8 @@ const useCalculator = () => {
     const functions = {
       '=': () => {
         if (activeOperation !== null) {
-          setDisplayValue(activeOperation(parseFloat(displayValue)).toString())
+          const result = activeOperation(parseFloat(displayValue))
+          setDisplayValue(result.toString())
         }
       },
       CE: () => {
