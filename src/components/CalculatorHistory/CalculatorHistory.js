@@ -22,7 +22,7 @@ function CalculatorHistory({ history }) {
       >
         {isOpen ? 'X' : 'H'}
       </button>
-      <h4>Results History</h4>
+      <h1>Results History</h1>
       <ul className={styles.resultsList}>
         {history.map(result => (
           <li className={styles.resultsListItem}>{result}</li>
