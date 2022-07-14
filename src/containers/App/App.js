@@ -1,9 +1,12 @@
 import Calculator from '../../components/Calculator/Calculator'
+import CalculatorState from '../../contexts/calculator/CalculatorState'
 
 function App() {
   return (
     <div role="main">
-      <Calculator />
+      <CalculatorState>
+        <Calculator />
+      </CalculatorState>
     </div>
   )
 }

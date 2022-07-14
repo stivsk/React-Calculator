@@ -15,6 +15,7 @@ function CalculatorOperators({ onClick }) {
       name={operator.symbol}
       onClick={() => onClick(operator.operation)}
       className={styles.operatorButton}
+      data-action-button
     >
       {operator.symbol}
     </button>

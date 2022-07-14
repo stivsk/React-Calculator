@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import CalculatorContext from '../contexts/calculator/CalculatorContext'
 
 let activeOperation = null
 
 const useCalculator = () => {
   const [displayValue, setDisplayValue] = useState('0')
+  const { addResultToHistory, resultsHistory } = useContext(CalculatorContext)
 
   const handleNumbers = ({ target }) => {
     if (displayValue === '0') {
@@ -23,7 +25,10 @@ const useCalculator = () => {
     const functions = {
       '=': () => {
         if (activeOperation !== null) {
-          setDisplayValue(activeOperation(parseFloat(displayValue)).toString())
+          const result = activeOperation(parseFloat(displayValue)).toString()
+
+          setDisplayValue(result)
+          addResultToHistory(result)
         }
       },
       CE: () => {
@@ -45,6 +50,7 @@ const useCalculator = () => {
 
   return {
     displayValue,
+    resultsHistory,
     handleDisplayValue,
     handleNumbers,
     handleOperators,

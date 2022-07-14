@@ -1,0 +1,69 @@
+.actionButton {
+  position: absolute;
+  left: -210px;
+  top: 25px;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: grid;
+  cursor: pointer;
+  place-content: center;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1) 0.1s;
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
+}
+
+.actionButtonOpen {
+  left: -140px;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.results {
+  position: absolute;
+  background-color: white;
+  right: -320px;
+  height: 100%;
+  width: 160px;
+  padding: 15px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    background-color: rgb(60 60 60 / 50%);
+    top: 0;
+    right: 100%;
+    height: 100%;
+    transition: opacity 0.3s cubic-bezier(.25,.8,.25,1) 0.1s;
+    opacity: 0;
+  }
+}
+
+.resultsList {
+  height: 280px;
+  list-style: none;
+  margin-top: 15px;
+  margin-right: -15px;
+  overflow-y: auto;
+}
+
+.resultsListItem {
+  margin-bottom: 5px;
+}
+
+.resultsOpen {
+  right: 0;
+
+  &.results {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

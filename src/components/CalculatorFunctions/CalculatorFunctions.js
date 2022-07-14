@@ -10,6 +10,7 @@ function CalculatorFunctions({ onClick }) {
       name={func}
       onClick={onClick}
       className={styles.functionButton}
+      data-action-button
     >
       {func}
     </button>

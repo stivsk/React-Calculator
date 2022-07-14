@@ -11,8 +11,10 @@
   grid-template-columns: repeat($calculator-columns, minmax(0, $button-size));
   grid-template-rows: repeat($calculator-rows, minmax(0, $button-size));
   box-shadow: 0 0 10px $buttons-color-darken;
+  position: relative;
+  overflow: hidden;
 
-  & button {
+  & button[data-action-button] {
     cursor: pointer;
     transition: background-color .3s ease-out;
 

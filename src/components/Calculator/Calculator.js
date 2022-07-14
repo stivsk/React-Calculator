@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react'
+
 import useCalculator from '../../hooks/useCalculator'
 import CalculatorLoader from '../CalculatorLoader/CalculatorLoader'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
@@ -14,10 +15,14 @@ const CalculatorNumbers = lazy(() =>
 const CalculatorOperators = lazy(() =>
   import('../CalculatorOperators/CalculatorOperators')
 )
+const CalculatorHistory = lazy(() =>
+  import('../CalculatorHistory/CalculatorHistory')
+)
 
 function Calculator() {
   const {
     displayValue,
+    resultsHistory,
     handleDisplayValue,
     handleNumbers,
     handleOperators,
@@ -40,6 +45,7 @@ function Calculator() {
             <CalculatorNumbers onClick={handleNumbers} />
             <CalculatorOperators onClick={handleOperators} />
             <CalculatorFunctions onClick={handleFunctions} />
+            <CalculatorHistory history={resultsHistory} />
           </Suspense>
         </ErrorBoundary>
       </div>
